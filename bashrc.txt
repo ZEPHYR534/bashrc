@@ -1,0 +1,21 @@
+# >>> irfan >>>
+
+export PS1="\[\033[38;5;40m\]\u@\h\[$(tput sgr0)\]:\[$(tput sgr0)\]\[\033[38;5;45m\][\w]\[$(tput sgr0)\]\[\033[38;5;214m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\[$(tput sgr0)\]\\$ \[$(tput sgr0)\]"
+
+alias ebrc="subl ~/.bashrc"
+alias sbrc="source ~/.bashrc"
+alias plz='sudo $(history -p !!)'
+alias h="cd ~"
+alias c="clear"
+alias hc="cd ~ && clear"
+
+function mkcd {
+    mkdir -p $1
+    cd $1
+}
+
+function cd () {
+    builtin cd "$1" && ls
+}
+
+# <<< irfan <<<
